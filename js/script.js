@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
   // মোবাইল মেনু toggle
   const toggle = document.getElementById("menu-toggle");
@@ -42,14 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // প্রতি ৪ সেকেন্ডে slide পরিবর্তন
   setInterval(nextSlide, 4000);
 });
-const toggle = document.getElementById('menu-toggle');
-const navLinks = document.getElementById('nav-links');
 
-toggle.addEventListener('click', () => {
-  navLinks.classList.toggle('show');
-});
-
-//ফরম সাবমিট(যোগাযোগ ও অনুদান)
 window.onload = function () {
   const urlParams = new URLSearchParams(window.location.search);
   const success = urlParams.get("success");
@@ -73,10 +65,10 @@ window.onload = function () {
       alert(messageText);
 
       messageHTML = `<div style="padding:10px; background-color:#e6ffe6; border-left:5px solid green; font-size:17px; margin-bottom:10px;">
-        <strong>${decodedName}</strong>, ধন্যবাদ! আপনার অনুদান সফলভাবে পাঠানো হয়েছে! আল্লাহ আপনাকে উত্তম প্রাতিদান দান করুন! ✅
+        <strong>${decodedName}</strong>, ধন্যবাদ! আপনার অনুদান সফলভাবে পাঠানো হয়েছে! আল্লাহ আপনাকে উত্তম প্রতিদান দান করুন! ✅
       </div>`;
     } else if (from === "ask") {
-      messageText = `প্রিয় ${decodedName}, আপনার প্রশ্ন সফলভাবে জমা হয়েছে।`;
+      messageText = `প্রিয় ${decodedName}, ✅ আপনার প্রশ্ন সফলভাবে জমা হয়েছে।`;
       alert(messageText);
 
       messageHTML = `<div style="padding:10px; background-color:#e6ffe6; border-left:5px solid green; font-size:17px; margin-bottom:10px;">
@@ -84,8 +76,7 @@ window.onload = function () {
       </div>`;
     }
 
-
-    // HTML মেসেজ ফর্মের উপরে দেখানো
+    // মেসেজ ফর্মের উপরে দেখানো
     if (messageHTML) {
       const form = document.querySelector("form");
       if (form) {
@@ -99,7 +90,7 @@ window.onload = function () {
     window.history.replaceState({}, document.title, window.location.pathname);
   }
 
-  // পেমেন্ট মেথড অনুযায়ী তথ্য দেখানো
+  // পেমেন্ট মেথড অনুযায়ী তথ্য দেখানো (donate.html পেইজে)
   const methodSelector = document.getElementById("payment-method");
   const infoDiv = document.getElementById("payment-info");
 
@@ -107,13 +98,13 @@ window.onload = function () {
     methodSelector.addEventListener("change", function () {
       const method = this.value;
       if (method === "bKash") {
-        infoDiv.innerHTML = "<strong>bKash নম্বর:</strong> 01311032271<br>নোট: উক্ত নাম্বারে মোবাইলে বিকাশের মাধ্যমে সেন্ড মানি করুন। সেন্ড মানি কৃত টাকার পরিমান উপরের অনুদানের ঘরে লিখে “অনুদান পাঠান “ বাটনে ক্লিক করুন!";
+        infoDiv.innerHTML = "<strong>bKash নম্বর:</strong> 01311032271<br>নোট: উক্ত নাম্বারে মোবাইলে বিকাশের মাধ্যমে সেন্ড মানি করুন।";
       } else if (method === "Nagad") {
-        infoDiv.innerHTML = "<strong>Nagad নম্বর:</strong> 01311032271<br>নোট: উক্ত নাম্বারে মোবাইলে নগদের মাধ্যমে সেন্ড মানি করুন। সেন্ড মানি কৃত টাকার পরিমান উপরের অনুদানের ঘরে লিখে “অনুদান পাঠান “ বাটনে ক্লিক করুন!";
+        infoDiv.innerHTML = "<strong>Nagad নম্বর:</strong> 01311032271<br>নোট: উক্ত নাম্বারে মোবাইলে নগদের মাধ্যমে সেন্ড মানি করুন।";
       } else if (method === "Bank") {
         infoDiv.innerHTML = "<strong>ব্যাংক তথ্য:</strong><br>অ্যাকাউন্ট: 123456789<br>ব্যাংক: ইসলামী ব্যাংক<br>ব্রাঞ্চ: ঢাকা সদর";
       } else {
-        infoDiv.innerHTML = "সরাসরি টাকা প্রদান করতে আল-ইখলাছ ফাউন্ডেশনের কার্যালয়ে যোগাযোগ করুন। ধন্যবাদ।";
+        infoDiv.innerHTML = "সরাসরি টাকা প্রদান করতে ফাউন্ডেশনের কার্যালয়ে যোগাযোগ করুন। ধন্যবাদ।";
       }
       infoDiv.style.display = "block";
     });
